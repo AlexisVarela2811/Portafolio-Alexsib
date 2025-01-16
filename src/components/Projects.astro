@@ -1,0 +1,94 @@
+---
+import Django from "../components/icon/Djnago.astro";
+import Tailwind from "../components/icon/Tailwind.astro";
+import JavaScript from "../components/icon/JavaScript.astro";
+import Css from "../components/icon/Css.astro";
+import Html from "../components/icon/Html.astro";
+import Oracle from "../components/icon/Oracle.astro";
+import GitHub from "../components/icon/GitHub.astro";
+const TAGS = {
+  DJANGO: {
+    name: "Django",
+    class: "bg-green-500/20",
+    icon: Django,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#5F9EA0]",
+    icon: Tailwind,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-yellow-500/90",
+    icon: JavaScript,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-purple-500/90",
+    icon: Css,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-orange-500/90",
+    icon: Html,
+  },
+  ORACLE: {
+    name: "OracleDB",
+    class: "bg-blue-500/90",
+    icon: Oracle,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Proyecto de portafolio de titulo Equivale",
+    description: "Mi portafolio es un software de e-commerce llamado “Equivale”, que busca ofrecer un servicio de compraventa online con despacho y encuestas de usuario, enfocado en la sustentabilidad. Este proyecto está construido utilizando Django, Oracle Database, Python, HTML, CSS, JavaScript y Tailwind como principales tecnologías. Además, se implementó el patrón Modelo-Vista-Template (MVT) propio de Django.",
+    link: "#",
+    github: "#",
+    image: "/public/EquivaleScreen.webp",
+    tags: [
+      TAGS.DJANGO,
+      TAGS.ORACLE,
+      TAGS.TAILWIND,
+      TAGS.JAVASCRIPT,
+      TAGS.HTML,
+      TAGS.CSS,
+    ],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image, github }) => (
+    <article class="p-8 border border-gray-700 rounded-lg bg-gradient-to-r from-[#020f1d] to-[#032041] shadow-lg">
+      <h3 class="text-2xl font-semibold text-yellow-500/90 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty text-white">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:flex-row">
+        {tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}`}
+      />
+      <div class="flex justify-between items-center mt-4">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center text-white hover:text-gray-400 transition-colors duration-300"
+        >
+          <GitHub class="h-6 w-6 mr-2" />
+          Ver código en GitHub
+        </a>
+      </div>
+    </article>
+  ))
+}

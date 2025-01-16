@@ -1,63 +1,87 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icon/Linkedln.astro";
 import GitHubIcon from "../components/icon/GitHub.astro";
-import MailIcon from "../components/icon/Mail.astro"
+import MailIcon from "../components/icon/Mail.astro";
 import Social from "../components/Social.astro";
+import Experience from "../components/Experience.astro";
+import SectionConteiner from "../components/SectionConteiner.astro";
+import BriefCase from "../components/icon/BriefCase.astro";
+import CodeIcon from "../components/icon/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Portafolio de AlexsibDev | Desarrollador y programador web | Backend | Fullstack "
- description="Contrata a Alexis Varela para desarrollar tus proyectos web, aplicaciones y sistemas informaticos">
-  <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+<Layout
+  title="Portafolio de AlexsibDev | Desarrollador y programador web | Backend | Fullstack "
+  description="Contrata a Alexis Varela para desarrollar tus proyectos web, aplicaciones y sistemas informaticos"
+>
+  <main class="px-4">
+    <SectionConteiner id="sobre-mi" class="py-44 pb-32">
       <img
         class="rounded-full size-12 mb-4"
         src="https://media.licdn.com/dms/image/v2/D4E03AQGK7POgKfX6Ag/profile-displayphoto-shrink_200_200/B4EZQK0TACGcAY-/0/1735348269470?e=1741219200&v=beta&t=t_Y3clfPb4OAajw_77AUK0ez_fjG-xsB0TVNKS0-ExE"
         alt="Alexis"
       />
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-        Hola, soy alexis <a
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Soy Alexis <span class="waving-hand">👋</span><a
           href="https://linkedin.com/in/alexisfabianvarela"
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center"
+          class="flex justify-center items-center text-blue-400"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-2xl opacity-80 text-wrap">
+      <h2 class="text-white lg:text-2xl max-w-[700px] text-wrap">
         Soy un apasionado de la programación y la tecnología, actualmente
         egresado de la carrera
-        <span class="text-blue-500/90 opacity-80"
+        <span class="text-blue-500"
           >Analista Programador Computacional.</span
         > Mi objetivo principal es seguir superándome constantemente, aprendiendo
         y aplicando mis conocimientos técnicos para desarrollar soluciones innovadoras
         que realmente marquen la diferencia para los usuarios. Con un enfoque en
-        la <span class="text-purple-500/90 opacity-80">mejora continua</span>,
-        la <span class="text-purple-500/90 opacity-80">excelencia</span> y el <span
-          class="text-purple-500/90 opacity-80">trabajo en equipo</span
+        la <span class="text-green-600">mejora continua</span>,
+        la <span class="text-green-600">excelencia</span> y el <span
+          class="text-green-600">trabajo en equipo</span
         >, me especializo en el desarrollo
-        <span class="text-purple-500/90 opacity-80">backend</span>, aunque
+        <span class="text-green-600">backend</span>, aunque
         también tengo una sólida capacidad para aportar en el <span
-          class="text-purple-500/90 opacity-80">frontend</span
+          class="text-green-600">frontend</span
         > de aplicaciones web.
       </h2>
-      <nav class="flex gap-x-2 mt-10">
+      <nav class="flex gap-4 mt-8 flex-wrap">
         <Social href="https://linkedin.com/in/alexisfabianvarela">
-          <LinkedInIcon class="size-6" />
+          <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </Social>
         <Social href="https://github.com/AlexisVarela2811">
-          <GitHubIcon class="size-6" />
+          <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </Social>
-		<Social>
-			<MailIcon class = "size-6" />
-		 alexisfabian1230@gmail.com
-		</Social>
+        <Social href="mailto: alexisfabian1230@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          alexisfabian1230@gmail.com
+        </Social>
       </nav>
-    </section>
+    </SectionConteiner>
+
+    <SectionConteiner id="experiencia">
+      <h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefCase class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionConteiner>
+
+    <SectionConteiner id="proyectos">
+      <h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionConteiner>
   </main>
 </Layout>

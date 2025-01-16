@@ -1,54 +1,22 @@
 ---
+import ExperienceItems from "./ExperienceItems.astro"
+
 const EXPERIENCE = [
     {
-        date: "March 2022",
-        title: "Marketing UI design in Figma",
-        description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        date: "Octubre 2023 - Diciembre 2023",
+        title: "Practica Profesional Desarrollador FullStack en ImaginePro",
+        description: `Desarrollé una plataforma de ventas de entradas para eventos, participando en el diseño y la implementación del sistema de gestión de tickets. Utilicé PostgreSQL para el modelado de la base de datos y Balsamiq para wireframing. Implementé el backend en Java con Spring Boot y el frontend en Angular e Ionic, colaborando estrechamente con un compañero para entregar el MVP.`,
         link: "#"
     },
-    {
-        date: "April 2022",
-        title: "E-Commerce UI code in Tailwind CSS",
-        description: "Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
-        link: "#"
-    }
+
 ]
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
-  <li class="mb-10 ms-4">
-  </li>
-  <li class="mb-10 ms-4">
-    <div
-      class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-    >
-    </div>
-    <time
-      class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-      >March 2022</time
-    >
-    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-      Marketing UI design in Figma
-    </h3>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      All of the pages and components are first designed in Figma and we keep a
-      parity between the two versions even as we update the project.
-    </p>
-  </li>
-  <li class="ms-4">
-    <div
-      class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-    >
-    </div>
-    <time
-      class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-      >April 2022</time
-    >
-    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-      E-Commerce UI code in Tailwind CSS
-    </h3>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements built
-      on top of Tailwind CSS.
-    </p>
-  </li>
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCE.map((experience) => (
+          <li class="mb-10 ms-4">
+            <ExperienceItems {...experience} />
+          </li>
+        ))
+    }  
 </ol>
