@@ -1,9 +1,32 @@
-<header class="flex justify-center items-center py-5 px-8 w-full mx-auto sticky top-0 z-50 bg-gradient-to-r from-[#020f1d] to-[#032041] shadow-lg">
-  <nav class="flex gap-x-10 opacity-90 text-white font-semibold">
-    <a href="/" class="hover:text-gray-400 transition-colors duration-300">INICIO</a>
-    <a href="/#sobre-mi" class="hover:text-gray-400 transition-colors duration-300">SOBRE MÍ</a>
-    <a href="/#experiencia" class="hover:text-gray-400 transition-colors duration-300">EXPERIENCIA</a>
-    <a href="/#proyectos" class="hover:text-gray-400 transition-colors duration-300">PROYECTOS</a>
-    <a href="/#contacto" class="hover:text-gray-400 transition-colors duration-300">CONTACTO</a>
+---
+import NavBarLarge from "./NavBarLarge.astro";
+import NavBarSmall from "./NavBarSmall.astro";
+import Hamburger from "./icon/Hamburger.astro";
+---
+
+<header
+  class="sticky top-0 z-50 bg-gradient-to-r from-[#020f1d] to-[#032041] shadow-lg"
+>
+  <nav class="flex justify-between items-center px-6 py-4 w-full">
+    <!-- Botón para el menú en dispositivos pequeños -->
+    <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+      <Hamburger />
+    </button>
+    <!-- Menú de navegación (pantallas grandes) -->
+    <NavBarLarge />
   </nav>
+  <!-- Menú de navegación para pantallas pequeñas -->
+  <NavBarSmall />
 </header>
+
+<script type="module">
+  // Obtener el botón y el menú de navegación móvil
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Alternar la visibilidad del menú móvil
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
