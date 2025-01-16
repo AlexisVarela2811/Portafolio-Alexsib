@@ -16,12 +16,12 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/Favicon.avif" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body class="relative text-black dark:text-white">
-		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#0d1b2a]">
+		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#010900]">
 			<div class="overlay"></div>
 		</div>
 		<Header />
@@ -74,4 +74,30 @@ const { title, description } = Astro.props;
 			will-change: transform;
 			transform: translateZ(0);
 		  }
+
+		/* Personalización del scrollbar en navegadores como Firefox */
+		::-webkit-scrollbar {
+			width: 4px;  /* Ancho del scrollbar */
+			height: 4px;  /* Alto del scrollbar para scroll horizontal */
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: #166534;  /* Color del pulgar (parte móvil) */
+			border-radius: 100vh;  /* Bordes redondeados */
+			transition: background-color 0.3s ease;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background-color: #166534;  /* Color del pulgar al hacer hover */
+		}
+
+		::-webkit-scrollbar-track {
+			background-color: #0b1701;  /* Fondo del track del scrollbar */
+			border-radius: 100vh;
+		}
+
+		::-webkit-scrollbar-corner {
+			background-color: transparent;
+		}
+
 		</style>
