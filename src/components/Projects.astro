@@ -6,6 +6,9 @@ import Css from "../components/icon/Css.astro";
 import Html from "../components/icon/Html.astro";
 import Oracle from "../components/icon/Oracle.astro";
 import GitHub from "../components/icon/GitHub.astro";
+import Express from "../components/icon/Express.astro";
+import React from "../components/icon/React.astro";
+import TypeScript from "../components/icon/TypeScript.astro";
 const TAGS = {
   DJANGO: {
     name: "Django",
@@ -37,12 +40,27 @@ const TAGS = {
     class: "bg-blue-500/90",
     icon: Oracle,
   },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-gray-500/90",
+    icon: Express,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-blue-500/90",
+    icon: React,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-blue-500/60",
+    icon: TypeScript,
+  },
 };
 
 const PROJECTS = [
   {
     title: "Proyecto de portafolio de titulo Equivale",
-    description: "Mi portafolio es un software de e-commerce llamado “Equivale”, que busca ofrecer un servicio de compraventa online con despacho y encuestas de usuario, enfocado en la sustentabilidad. Este proyecto está construido utilizando Django, Oracle Database, Python, HTML, CSS, JavaScript y Tailwind como principales tecnologías. Además, se implementó el patrón Modelo-Vista-Template (MVT) propio de Django.",
+    description: "Mi portafolio es un software de e-commerce llamado “Equivale”, que busca ofrecer un servicio de compraventa online con despacho y encuestas de usuario, enfocado en la sustentabilidad. Este proyecto está construido utilizando Django, Oracle Database, Python, HTML, CSS, JavaScript y Tailwind como principales tecnologías. más, se implementó el patrón Modelo-Vista-Template (MVT) propio de Django.",
     link: "#",
     github: "https://github.com/AlexisVarela2811/Portafolio-De-Titulo",
     image: "/EquivaleScreen.webp",
@@ -55,12 +73,27 @@ const PROJECTS = [
       TAGS.CSS,
     ],
   },
+  {
+    title: "CloudLocal",
+    description: "CloudLocal es un sistema de gestión de archivos que permite a los usuarios subir, descargar, eliminar y archivos de manera sencilla, simula ser un almacenamiento en la nube, pero de manera local, usando un ordenador que ya no se esté utilizando en casa. Con este sistema, puedes tener tu propia nube personal sin necesidad de depender de servicios de terceros.",
+    link: "#",
+    github: "https://github.com/AlexisVarela2811/CloudLocal",
+    image: "/CloudLocalScreen.webp",
+    tags: [
+      TAGS.EXPRESS,
+      TAGS.REACT,
+      TAGS.TYPESCRIPT,
+      TAGS.HTML,
+      TAGS.TAILWIND,
+      TAGS.JAVASCRIPT,
+    ],
+  },
 ];
 ---
 
 {
   PROJECTS.map(({ title, description, tags, image, github }) => (
-    <article class="p-8 border border-green-800 rounded-lg bg-[#0b1701] shadow-lg">
+    <article class="p-8 border border-green-800 rounded-lg mb-6 bg-[#0b1701] shadow-lg">
       <h3 class="text-2xl font-semibold text-yellow-500/90 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty text-white">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:flex-row">
