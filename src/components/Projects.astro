@@ -111,7 +111,7 @@ const PROJECTS = [
     description:
       "Sistema de gestión integral para gimnasios de barrio: un solo producto que resuelve control de acceso por RUT, socios, planes, caja y inventario. Diseñado para instalación en la PC del local: datos en la máquina del cliente, un instalador, cero dependencia de internet o de servidor externo.",
     link: "#",
-    github: "#",
+    github: null,
     image: "/NexusGym.webp",
     tags: [
       TAGS.FASTAPI,
@@ -144,17 +144,19 @@ const PROJECTS = [
         src={image}
         alt={`Captura de pantalla del proyecto ${title}`}
       />
-      <div class="flex justify-between items-center mt-4">
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center text-white hover:text-gray-400 transition-colors duration-300"
-        >
-          <GitHub class="h-6 w-6 mr-2" />
-          Ver código en GitHub
-        </a>
-      </div>
+      {github && (
+        <div class="flex justify-between items-center mt-4">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center text-white hover:text-gray-400 transition-colors duration-300"
+          >
+            <GitHub class="h-6 w-6 mr-2" />
+            Ver código en GitHub
+          </a>
+        </div>
+      )}
     </article>
   ))
 }
