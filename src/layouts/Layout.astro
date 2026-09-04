@@ -8,6 +8,12 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const canonicalUrl = Astro.site
+	? new URL(Astro.url.pathname, Astro.site)
+	: undefined;
+const socialImageUrl = Astro.site
+	? new URL('/og-homepage.png', Astro.site)
+	: undefined;
 ---
 
 <!doctype html>
@@ -18,6 +24,25 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/Favicon.avif" />
 		<meta name="generator" content={Astro.generator} />
+		{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+		{socialImageUrl && (
+			<>
+				<meta property="og:image" content={socialImageUrl} />
+				<meta property="og:image:secure_url" content={socialImageUrl} />
+				<meta property="og:image:type" content="image/png" />
+				<meta property="og:image:width" content="1200" />
+				<meta property="og:image:height" content="630" />
+				<meta property="og:image:alt" content="Homepage of Alexis Varela's web development portfolio" />
+			</>
+		)}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
 		<title>{title}</title>
 	</head>
 	<body class="relative text-black dark:text-white">
