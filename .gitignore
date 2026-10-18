@@ -23,3 +23,9 @@ pnpm-debug.log*
 # vscode settings folder
 .vscode/
 .atl/
+
+# browser test downloads and generated output
+.playwright-browsers/
+.playwright-build/
+playwright-report/
+test-results/
