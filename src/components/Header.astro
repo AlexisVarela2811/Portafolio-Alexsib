@@ -2,14 +2,15 @@
 import NavBarLarge from "./NavBarLarge.astro";
 import NavBarSmall from "./NavBarSmall.astro";
 import Hamburger from "./icon/Hamburger.astro";
+import PageScrollProgress from "./PageScrollProgress.astro";
 ---
 
 <header
-  class="sticky top-0 z-50 bg-[#0b1701] shadow-lg"
+  class="sticky top-0 z-50 bg-canvas shadow-lg"
 >
   <nav class="flex justify-between items-center px-6 py-4 w-full">
     <!-- Botón para el menú en dispositivos pequeños -->
-    <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+    <button id="menu-toggle" class="lg:hidden text-ink" aria-label="Menú principal" aria-expanded="false" aria-controls="mobile-menu">
       <Hamburger />
     </button>
     <!-- Menú de navegación (pantallas grandes) -->
@@ -17,6 +18,7 @@ import Hamburger from "./icon/Hamburger.astro";
   </nav>
   <!-- Menú de navegación para pantallas pequeñas -->
   <NavBarSmall />
+  <PageScrollProgress />
 </header>
 
 <script type="module">
@@ -26,7 +28,8 @@ import Hamburger from "./icon/Hamburger.astro";
 
   // Alternar la visibilidad del menú móvil
   menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+    const hidden = mobileMenu.classList.toggle("hidden");
+    menuToggle.setAttribute("aria-expanded", String(!hidden));
   });
 </script>
 

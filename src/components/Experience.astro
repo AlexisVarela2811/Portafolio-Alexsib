@@ -1,27 +1,42 @@
 ---
 import ExperienceItems from "./ExperienceItems.astro"
+import ExperienceTimeline from "./ExperienceTimeline.astro"
 
 const EXPERIENCE = [
     {
-        date: "Abr. 2025 - actualidad · 1 año",
-        title: "Python Developer Trainee — Signum-BI",
-        description: `Desarrollo de aplicaciones en Python orientadas al procesamiento y análisis de documentos, con participación en proyectos de reconocimiento óptico de caracteres (OCR) para extracción automática de información. Implementación de automatización de procesos para el tratamiento y estructuración de datos, e integración de modelos de lenguaje (LLMs) para análisis de texto. Gestión y optimización de bases de datos NoSQL (MongoDB) y PostgreSQL, con trabajo en equipo y control de versiones mediante Git.`,
+        date: "Abril 2025 - Octubre 2026 · Prestación de servicios",
+        title: "Desarrollador de Software (Python) | Signum-BI",
+        description: `• Automaticé la conciliación de movimientos bancarios que antes se hacía a mano en Excel. Desarrollé de forma autónoma la mayor parte del módulo con React, Django y PostgreSQL, sobre una base existente.
+
+• Automaticé la lectura de boletas para la rendición de gastos usando Amazon Textract y la API de OpenAI. Los datos se pueden revisar y corregir, y los campos no encontrados quedan vacíos para completarlos.
+
+• Convertí información de contratos en datos estructurados para que el sistema pudiera utilizarlos usando Python, OCR, Regex y modelos de lenguaje (LLMs).`,
         link: "https://www.linkedin.com/in/alexisfabianvarela/details/experience/"
     },
     {
-        date: "Octubre 2023 - Diciembre 2023",
-        title: "Practica Profesional Desarrollador FullStack en ImaginePro",
-        description: `Desarrollé una plataforma de ventas de entradas para eventos, participando en el diseño y la implementación del sistema de gestión de tickets. Utilicé PostgreSQL para el modelado de la base de datos y Balsamiq para wireframing. Implementé el backend en Java con Spring Boot y el frontend en Angular e Ionic, colaborando estrechamente con un compañero para entregar el MVP.`,
+        date: "Febrero 2026 - Marzo 2026 · Software a medida, vendido e instalado",
+        title: "Desarrollador Full Stack | NexusGym",
+        description: `• Desarrollé desde cero y vendí un sistema de gestión hecho a medida para un gimnasio. Hoy sigue siendo su software principal y tiene alrededor de 160 socios registrados.
+
+• Reuní el control de acceso por RUT, socios, planes, caja e inventario en una sola aplicación. Diseñé su base de datos, APIs REST y autenticación JWT con FastAPI, React, Electron y SQLite.
+
+• Hice que el gimnasio pudiera trabajar sin depender de internet ni servidores externos con una aplicación de escritorio. Fui agregando mejoras según lo que necesitaba el cliente.`
+    },
+    {
+        date: "Octubre 2024 - Diciembre 2024 · Plataforma de entradas y eventos",
+        title: "Desarrollador Full Stack - Práctica profesional | Imagine Pro",
+        description: `• Entregamos un MVP funcional para vender y gestionar entradas durante la práctica. Trabajé junto con otro desarrollador en Java, Spring Boot, Angular, Ionic y PostgreSQL.`,
         link: "https://www.linkedin.com/in/alexisfabianvarela/details/experience/"
     },
 ]
 ---
-<ol class="relative border-s border-gray-200 ml-3">
+<ExperienceTimeline>
     {
         EXPERIENCE.map((experience) => (
-          <li class="mb-10 ms-4">
+          <li class="timeline-entry">
+            <span class="timeline-marker" data-timeline-marker aria-hidden="true"></span>
             <ExperienceItems {...experience} />
           </li>
         ))
-    }  
-</ol>
+    }
+</ExperienceTimeline>
