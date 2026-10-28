@@ -11,9 +11,9 @@
     "test:e2e": "npm run build -- --outDir .playwright-build && playwright test"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.10",
     "@astrojs/tailwind": "^5.1.2",
-    "@fontsource-variable/onest": "^5.1.0",
+    "@fontsource-variable/onest": "^5.3.1",
     "astro": "^4.16.18",
     "portafolio-dev": "file:",
     "tailwindcss": "^3.4.15",
