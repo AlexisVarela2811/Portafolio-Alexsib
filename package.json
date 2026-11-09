@@ -11,16 +11,16 @@
     "test:e2e": "npm run build -- --outDir .playwright-build && playwright test"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.12",
     "@astrojs/tailwind": "^5.1.2",
-    "@fontsource-variable/onest": "^5.1.0",
+    "@fontsource-variable/onest": "^5.3.1",
     "astro": "^4.16.18",
     "portafolio-dev": "file:",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.64.1",
+    "@playwright/test": "^1.65.0",
     "@types/node": "^24.19.2"
   }
 }
